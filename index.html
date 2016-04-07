@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+  </head>
+    <title>Сортировщик карточек путешественника</title>
+  </head>
+  <body>
+    <script type="text/javascript" src="travelCardSorter.js"></script>
+
+    <script type="text/javascript">
+      var cards = [
+        {
+          origin: {
+            name: 'Barcelona',
+            location: {
+              lat: 43.449028,
+              lng: -80.49168499999999
+            }
+          },
+          destination: {
+            name: 'Gerona Airport',
+            location: {
+              lat: 43.449028,
+              lng: -80.49168499999999
+            }
+          },
+          transport: {
+            type: 'airport_bus',
+            route: '',
+            gate: '',
+            seat: '',
+            baggage_drop: '',
+            notes: ''
+          }
+        },
+        {
+          origin: {
+            name: 'Sheremetyevo Airport',
+            location: {
+              lat: 43.449028,
+              lng: -80.49168499999999
+            }
+          },
+          destination: {
+            name: 'ul. Lva Tolstogo, 16',
+            location: {
+              lat: 55.7337309,
+              lng: 37.588
+            }
+          },
+          transport: {
+            type: 'taxi',
+            route: '',
+            gate: '',
+            seat: '',
+            baggage_drop: '',
+            notes: ''
+          }
+        },
+        {
+          origin: {
+            name: 'Madrid',
+            location: {
+              lat: 43.449028,
+              lng: -80.49168499999999
+            }
+          },
+          destination: {
+            name: 'Barcelona',
+            location: {
+              lat: 43.449028,
+              lng: -80.49168499999999
+            }
+          },
+          transport: {
+            type: 'train',
+            route: '78A',
+            gate: '',
+            seat: '45B',
+            baggage_drop: '',
+            notes: ''
+          }
+        },
+        {
+          origin: {
+            name: 'ul. Lva Tolstogo, 16',
+            location: {
+              lat: 55.7337309,
+              lng: 37.588
+            }
+          },
+          destination: {
+            name: 'Paveletskiy vokzal',
+            location: {
+              lat: 55.7305296,
+              lng: 37.6388935
+            }
+          },
+          transport: {
+            type: 'walking',
+            route: '',
+            gate: '',
+            seat: '',
+            baggage_drop: '',
+            notes: 'Long walk, but fabulous views of Moscow.'
+          }
+        },
+        {
+          origin: {
+            name: 'Domodedovo Airport',
+            location: {
+              lat: 55.4103099,
+              lng: 37.9002626
+            }
+          },
+          destination: {
+            name: 'JFK',
+            location: {
+              lat: 40.6413151,
+              lng: -73.7803278
+            }
+          },
+          transport: {
+            type: 'plane',
+            route: 'SK455',
+            gate: '22',
+            seat: '7B',
+            baggage_drop: '',
+            notes: 'Check visa requirements before your flight.'
+          }
+        },
+        {
+          origin: {
+            name: 'Paveletskiy vokzal',
+            location: {
+              lat: 55.7305296,
+              lng: 37.6388935
+            }
+          },
+          destination: {
+            name: 'Domodedovo Airport',
+            location: {
+              lat: 55.4103099,
+              lng: 37.9002626
+            }
+          },
+          transport: {
+            type: 'train',
+            route: 'Aeroexpress',
+            gate: '',
+            seat: '',
+            baggage_drop: '',
+            notes: ''
+          }
+        },
+        {
+          origin: {
+            name: 'Gerona Airport',
+            location: {
+              lat: 43.449028,
+              lng: -80.49168499999999
+            }
+          },
+          destination: {
+            name: 'Sheremetyevo Airport',
+            location: {
+              lat: 43.449028,
+              lng: -80.49168499999999
+            }
+          },
+          transport: {
+            type: 'plane',
+            route: 'SK455',
+            gate: '45B',
+            seat: '3A',
+            baggage_drop: '334',
+            notes: ''
+          }
+        }
+      ];
+
+      var main = function () {
+        var sorter = new TravelCardSorter();
+        sorter.importCards(cards);
+        sorter.sortCards();
+        sorter.printItinerary();
+      }
+
+      document.addEventListener("DOMContentLoaded", main);
+    </script>
+  </body>
+</html>
