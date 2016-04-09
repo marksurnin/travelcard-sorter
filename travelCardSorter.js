@@ -62,6 +62,15 @@ TravelCardSorter.prototype.importCards = function(data) {
   ctx.cards = [];
 
   if (data instanceof Array) {
+
+    // Check if input is invalid
+    data.forEach(function(card) {
+      if (!card.origin.name || card.origin.name === '') {
+        console.error('origin.name property is missing in ' + JSON.stringify(card));
+      } else if (!card.destination.name || card.destination.name === '') {
+        console.error('destination.name property is missing in ' + JSON.stringify(card));
+      }
+    })
     ctx.cards = data;
   }
 
